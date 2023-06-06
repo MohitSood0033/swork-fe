@@ -1,0 +1,71 @@
+.log {
+  display: grid;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+ion-back-button {
+  position: absolute;
+  z-index: 9;
+}
+.image {
+  border-radius: inherit;
+  width: 60px;
+  margin-right: 10px;
+}
+.left__btn:hover ion-button {
+  background-color: lightgray;
+}
+.title {
+  margin-left: 20%;
+  font-size: x-large;
+}
+.badge {
+  font-size: x-large;
+  margin-top: 15px;
+}
+.total {
+  border-color: black;
+  border-style: groove;
+}
+#price {
+  margin-left: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.cart_card {
+  padding: 0px;
+  color: black;
+  background-color: white;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  box-shadow: none;
+}
+.checkout_btn {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.icons_align {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.product_img ion-img {
+  border-radius: 5px;
+  width: 100%;
+  height: 70px;
+  overflow: hidden;
+  border: 1px solid #fff;
+  object-fit: cover;
+}
+
+ion-item::part(native) {
+  padding-left: 0px;
+}
+ion-item{
+  --inner-padding-end: 0px;
+  --padding-start:0px
+}

@@ -1,0 +1,65 @@
+<ion-footer>
+  <ion-toolbar >
+    <ion-segment mode="md" (ionChange)="segmentChanged($event)" >
+        <ion-segment-button value="Home" (click)="home()">
+          <ion-icon class="segment-icon" [ngStyle]="{'color': segment === 'Home' ? '#ff7722 ' : 'grey' && currentRoute=='/home2'? '#ff7722 ' : 'grey'}" name="home-sharp" ></ion-icon>
+          <ion-label class="label" [ngStyle]="{'color': segment === 'Home' ? '#ff7722 ' : 'grey' && currentRoute=='/home2'  ? '#ff7722 ' : 'grey'}"> Home </ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="Order" (click)="myOrder()">
+          <ion-icon class="segment-icon" name="fast-food-sharp" [ngStyle]="{'color': segment === 'Order' ? '#ff7722 ' : 'grey'&& currentRoute=='/order?preUrl=%2Fhome2'? '#ff7722 ' : 'grey'}"></ion-icon>
+          <ion-label class="label" [ngStyle]="{'color': segment === 'Order' ? '#ff7722 ' : 'grey' && currentRoute=='/order?preUrl=%2Fhome2' ? '#ff7722 ' : 'grey'}"> Order </ion-label>
+
+        </ion-segment-button>
+        <ion-segment-button value="Search"  (click)="search()">
+          <ion-icon  class="segment-icon" name="search-sharp" [ngStyle]="{'color': segment === 'Search' ? 'grey ' : 'grey'&& currentRoute=='/home2'? 'grey ' : 'grey'}"></ion-icon>
+          <ion-label class="label" [ngStyle]="{'color': segment === 'Search' ? 'grey ' : 'grey'&& currentRoute=='/home2'? 'grey ' : 'grey'}"> Search </ion-label>
+
+        </ion-segment-button>
+        <ion-segment-button value="Profile" (click)="customerProfile()">
+          <ion-icon class="segment-icon" name="person-sharp" [ngStyle]="{'color': segment === 'Profile' ? '#ff7722 ' : 'grey' && currentRoute=='/customer-profile'? '#ff7722 ' : 'grey'}"></ion-icon>
+          <ion-label class="label" [ngStyle]="{'color': segment === 'Profile' ? '#ff7722 ' : 'grey' && currentRoute=='/customer-profile' ? '#ff7722 ' : 'grey'}"> Profile </ion-label>
+
+      </ion-segment-button>
+    </ion-segment>
+
+    <!-- <div *ngIf="segment === 'Home'">
+    
+    </div> -->
+
+
+    <!-- <ion-grid>
+      <ion-row>
+       
+        <ion-col
+          ><ion-tab-button tab="Home">
+            <ion-icon class="segment-icon" name="home-outline" [ngStyle]="{'color': tab === 'Home' ? '#ff7722 ' : 'grey'}"></ion-icon>
+            <ion-label>Home</ion-label>
+          </ion-tab-button></ion-col>
+          <ion-col
+          ><ion-tab-button tab="Home">
+            <ion-icon class="segment-icon"  name="fast-food-sharp" [ngStyle]="{'color': tab === 'Home' ? '#ff7722 ' : 'grey'}"></ion-icon>
+            <ion-label>Order</ion-label>
+          </ion-tab-button></ion-col>
+          <ion-col
+          ><ion-tab-button tab="Home">
+            <ion-icon  class="segment-icon" name="search-sharp" [ngStyle]="{'color': tab === 'Home' ? '#ff7722 ' : 'grey'}"></ion-icon>
+            <ion-label>Search</ion-label>
+          </ion-tab-button></ion-col>
+        <ion-col>
+          <ion-tab-button tab="profile">
+            <ion-icon class="segment-icon" name="person-sharp" [ngStyle]="{'color': tab === 'Home' ? '#ff7722 ' : 'grey'}"></ion-icon>
+            <ion-label>Profile</ion-label>
+          </ion-tab-button></ion-col
+        >
+        
+      </ion-row>
+    </ion-grid> -->
+
+    <!-- <ion-tabs>
+      <ion-tab-bar  [root]="tab1Root" tabTitle="Home" tabIcon="home"></ion-tab-bar>
+      <ion-tab-bar [root]="tab2Root" tabTitle="About" tabIcon="information-circle"></ion-tab-bar>
+      <ion-tab-bar [root]="tab3Root" tabTitle="Contact" tabIcon="contacts"></ion-tab-bar>
+    </ion-tabs> -->
+    
+</ion-toolbar>
+</ion-footer>

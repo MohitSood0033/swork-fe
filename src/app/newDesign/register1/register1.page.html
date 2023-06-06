@@ -1,0 +1,162 @@
+<div class="main">
+  <div class="banner">
+    <img src="assets\newImg\ScreenImage3.png" alt="" />
+    <img class="home_icon" src="assets\newImg\HomepageIconWithBack.png" alt="" routerLink="/home2" />
+    <div class="boarderHover">
+
+    </div>
+  </div>
+  <div class="logo">
+    <img src="/assets/img/s-work7-logo-11.png" alt="" />
+  </div>
+  <div class="title_text">
+    <h1>Join to us & Order<br />with confidence</h1>
+    <p>Tell us your food preferences and we'll only serve you delicious food</p>
+  </div>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" novalidate>
+    <div class="form_group">
+
+      <ion-item lines="full">
+        <ion-label position="floating">First name</ion-label>
+        <ion-input type="text" formControlName="firstname" minlength="3" maxlength="20"></ion-input>
+      </ion-item>
+      <span *ngIf="isSubmitted && registerForm.controls.firstname.errors" class="text-danger">
+        <span class="error ion-padding" *ngIf="isSubmitted && registerForm.controls.firstname.errors.required">
+          Fristname is required.
+        </span>
+      </span>
+      <ion-item lines="full">
+        <ion-label position="floating">Last name</ion-label>
+        <ion-input type="text" formControlName="lastname" minlength="3" maxlength="20"></ion-input>
+      </ion-item>
+      <span *ngIf="isSubmitted && registerForm.controls.lastname.errors" class="text-danger">
+        <span class="error ion-padding" *ngIf="isSubmitted && registerForm.controls.lastname.errors.required">
+          Lastname is required.
+        </span>
+      </span>
+      <ion-item lines="full">
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
+      </ion-item>
+      <span *ngIf="isSubmitted && registerForm.controls.email.errors" class="text-danger">
+        <span class="error ion-padding" *ngIf="isSubmitted && registerForm.controls.email.errors.email">
+          Enter valid email.
+        </span>
+      </span>
+      <ion-item lines="full">
+        <ion-label position="floating">Phone</ion-label>
+        <ion-input type="number" formControlName="phone"></ion-input>
+      </ion-item>
+      <span *ngIf="isSubmitted && registerForm.controls['phone'].errors" class="text-danger">
+        <span class="error ion-padding" *ngIf="isSubmitted && registerForm.controls['phone'].errors['required']">
+          Phone Number is required.
+        </span>
+        <span class="error ion-padding" *ngIf="isSubmitted && registerForm.controls['phone'].errors['pattern']">
+          Phone Number should be 10 digit only
+        </span>
+      </span>
+      <ion-item lines="full">
+        <ion-label position="floating">Reference Phone</ion-label>
+        <ion-input type="number" maxlength="10" formControlName="rephone"></ion-input>
+      </ion-item>
+      <span *ngIf="isSubmitted && registerForm.controls['rephone'].errors" class="text-danger">
+
+        <span class="error ion-padding"
+          *ngIf="isSubmitted && registerForm.controls.controls['rephone'].errors['pattern']">
+          Phone Number should be 10 digit only
+        </span>
+      </span>
+      <ion-item lines="full">
+        <ion-label position="floating">Password </ion-label>
+        <ion-input type="password" appAutofill [type]="showPassword ? 'text':'password'" formControlName="password"></ion-input>
+      <ion-icon slot="end" [name]="passwordToggleIcon" (click)="toggle()"></ion-icon>
+<!-- 
+        <img class="hide_show" src="assets\newImg\PasswordShow.svg" alt="" />
+        <img class="hide_show" src="assets\newImg\PasswordHide.svg" alt="" /> -->
+
+        <img>
+      </ion-item>
+      <span *ngIf="isSubmitted && registerForm.controls.password.errors" class="text-danger">
+        <span class="error ion-padding" *ngIf="isSubmitted && registerForm.controls.password.errors.required">
+          Password is required.
+        </span>
+      </span>
+      <!-- <ion-radio-group>
+        <ion-list-header class="list-header">
+          Category :
+        </ion-list-header>
+
+        <ion-item lines="full">
+          <ion-label>Shop</ion-label>
+          <ion-radio value="shops" (click)="onClick('shops')"></ion-radio>
+        </ion-item>
+
+        <ion-item lines="full">
+
+          <ion-label>Service</ion-label>
+
+          <ion-radio value="services" (click)="onClick('services')">
+          </ion-radio>
+        </ion-item>
+      </ion-radio-group> -->
+
+      <!-- <ion-item lines="full">
+          <ion-select interface="action-sheet" formControlName="service" [multiple]="true" placeholder={{label}}>
+            <ion-select-option *ngFor="let service of serviceData;let i=index" value="{{service._id}}">
+              {{service.name}}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+        <span *ngIf="isSubmitted && registerForm.controls.service.errors" class="text-danger">
+          <span class="error ion-padding" *ngIf="isSubmitted && registerForm.controls.service.errors.required">
+            Service OR Shop is required.
+          </span>
+        </span> -->
+
+      <!-- <ion-item *ngIf="isSelected===true">
+        <ion-label>{{label}}</ion-label>
+        <ionic-selectable item-content formControlName="service" [(ngModel)]="services" [items]="serviceData"
+          itemValueField="_id" itemTextField="name" [isMultiple]="true" [canSearch]="true"
+          (onChange)="portChange($event)">
+        </ionic-selectable>
+        <span *ngIf="isSubmitted && registerForm.controls.service.errors" class="text-danger">
+          <span class="error ion-padding" *ngIf="isSubmitted && registerForm.controls.service.errors.required">
+            Service OR Shop is required.
+          </span>
+        </span>
+      </ion-item> -->
+      <ion-item lines="full">
+        <ion-label position="floating">Location</ion-label>
+        <ion-input type="text" formControlName="geo_address" #autocomplete>
+        </ion-input>
+      </ion-item>
+      <span *ngIf="isSubmitted && registerForm.controls.geo_address.errors" class="text-danger">
+        <span class="error ion-padding" *ngIf="isSubmitted && registerForm.controls.geo_address.errors.required">
+          Loction is required.
+        </span>
+      </span>
+
+      <!-- <ion-item lines="full">
+        <ion-label position="floating">Discription</ion-label>
+        <ion-textarea formControlName="discription" maxlength="100">
+        </ion-textarea>
+      </ion-item> -->
+
+
+
+
+      <div class="register_btn">
+        <ion-button class="register" fill="clear" type="submit">
+          REGISTER NOW
+        </ion-button>
+        <br>
+        <span>OR</span>
+        <br>
+        <span style="color:#ff7722 ;font-weight: bold;
+         font-size: 15px;" routerLink="/login1">LOGIN NOW</span>
+
+      </div>
+
+    </div>
+  </form>
+</div>

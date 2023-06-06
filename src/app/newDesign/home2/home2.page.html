@@ -1,0 +1,310 @@
+
+
+<div class="main">
+
+  <div class="location_header">
+    <div class="loaction">
+      <!-- <div class="location_pin">
+        <ion-icon name="location-outline"></ion-icon>
+      </div> -->
+      <div class="location_address">
+
+
+        <div class="ionSearch">
+          <ion-searchbar search-icon="location-outline" placeholder="Search location" name="location"
+            [(ngModel)]="form.geo_address" #location="ngModel" #autocomplete (search)="onSearch($event)" class="search"
+            type="search">
+          </ion-searchbar>
+        </div>
+        <!-- <input type="search" id="gsearch" name="gsearch" name="location" [(ngModel)]="form.geo_address" #location="ngModel" placeholder="Search location"
+        #autocomplete (search)="onSearch($event)"> -->
+        <!-- <p>Sector 67, Mohali, Punjab</p> -->
+      </div>
+    </div>
+    <div class="location_user">
+      <ion-icon name="person-circle-sharp" routerLink="/customer-profile"></ion-icon>
+      <!-- <ion-icon name="person-outline"></ion-icon> -->
+    </div>
+  </div>
+
+  <!-- searchbar -->
+  <!-- <div class="ionSearch">
+  <ion-searchbar placeholder="Search location" name="location" [(ngModel)]="form.geo_address" #location="ngModel"
+  #autocomplete (search)="onSearch($event)" class="search" type="search">
+</ion-searchbar>
+</div> -->
+
+  <!-- <div class="search_header">
+    <div class="form-group has-search">
+      <span class="fa fa-search form-control-feedback"></span>
+      <input type="text" class="form-control" placeholder="Search anything you want">
+    </div>
+  </div> -->
+
+  <!-- <div class="home_slider">
+    <ion-slides>
+      <ion-slide>
+        <img src="assets\newImg\ScreenImage2.png" alt="" />
+      </ion-slide>
+      <ion-slide>
+        <img src="assets\newImg\ScreenImage2.png" alt="" />
+      </ion-slide>
+      <ion-slide>
+        <img src="assets\newImg\ScreenImage2.png" alt="" />
+      </ion-slide>
+    </ion-slides>
+  </div> -->
+
+  <div class="map-container">
+
+    <div class="map" #map>
+      <capacitor-google-map></capacitor-google-map>
+
+
+    </div>
+  </div>
+
+  <!-- <div class="home_list">
+    <div class="list">
+      <ul>
+        <li><a href="#!"><ion-icon name="bicycle"></ion-icon><br>Express<br>Delivery</a></li>
+        <li><a href="#!"><ion-icon name="shield-checkmark"></ion-icon><br>Sefty<br>Services</a></li>
+        <li><a href="#!"><ion-icon name="bicycle"></ion-icon><br>Creat<br>Offers</a></li>
+        <li><a href="#!"><ion-icon name="restaurant"></ion-icon><br>New<br>Dishes</a></li>
+        <li><a href="#!"><ion-icon name="time"></ion-icon><br>On Time<br>Delivery</a></li>
+      </ul>
+    </div>
+  </div> -->
+
+  <!-- <div class="home_menu">
+    <div class="menu">
+      <button  shape="circle">chienies</button>
+      <button shape="circle">Indian</button>
+      <button shape="circle">Asian</button>
+      <button shape="circle">Street</button>
+      <button shape="circle">chienies</button>
+      <button shape="circle">chienies</button>
+      <button shape="circle">chienies</button>
+      <button shape="circle">chienies</button>
+      <button shape="circle">chienies</button>
+      <button shape="circle">chienies</button>
+    </div>
+  </div> -->
+</div>
+
+<!-- <div class="products">
+  <div class="product_contant">
+    <div class="product_image">
+      <img src="assets\newImg\ScreenImage2.png" alt="" />
+    </div>
+    <div class="product_text">
+      <h3>DILLI KA CLUB</h3>
+      <p>Casual Dining - Chinese Food special Plat...</p>
+      <span>1.3km | New Tow Mohali</span>
+      <a href="#!">Order Now</a>
+    </div>
+    <div class="rating">
+      <span>4.3</span>
+    </div>
+  </div>
+  <div class="product_contant">
+    <div class="product_image">
+      <img src="assets\newImg\ScreenImage2.png" alt="" />
+    </div>
+    <div class="product_text">
+      <h3>DILLI KA CLUB</h3>
+      <p>Casual Dining - Chinese Food special Plat...</p>
+      <span>1.3km | New Tow Mohali</span>
+      <a href="#!">Order Now</a>
+    </div>
+    <div class="rating">
+      <span>4.3</span>
+    </div>
+  </div>
+  <div class="product_contant">
+    <div class="product_image">
+      <img src="assets\newImg\ScreenImage2.png" alt="" />
+    </div>
+    <div class="product_text">
+      <h3>DILLI KA CLUB</h3>
+      <p>Casual Dining - Chinese Food special Plat...</p>
+      <span>1.3km | New Tow Mohali</span>
+      <a href="#!">Order Now</a>
+    </div>
+    <div class="rating">
+      <span>4.3</span>
+    </div>
+  </div>
+  <div class="product_contant">
+    <div class="product_image">
+      <img src="assets\newImg\ScreenImage2.png" alt="" />
+    </div>
+    <div class="product_text">
+      <h3>DILLI KA CLUB</h3>
+      <p>Casual Dining - Chinese Food special Plat...</p>
+      <span>1.3km | New Tow Mohali</span>
+      <a href="#!">Order Now</a>
+    </div>
+    <div class="rating">
+      <span>4.3</span>
+    </div>
+  </div>
+  <div class="product_contant">
+    <div class="product_image">
+      <img src="assets\newImg\ScreenImage2.png" alt="" />
+    </div>
+    <div class="product_text">
+      <h3>DILLI KA CLUB</h3>
+      <p>Casual Dining - Chinese Food special Plat...</p>
+      <span>1.3km | New Tow Mohali</span>
+      <a href="#!">Order Now</a>
+    </div>
+    <div class="rating">
+      <span>4.3</span>
+    </div>
+  </div>
+  <div class="product_contant">
+    <div class="product_image">
+      <img src="assets\newImg\ScreenImage2.png" alt="" />
+    </div>
+    <div class="product_text">
+      <h3>DILLI KA CLUB</h3>
+      <p>Casual Dining - Chinese Food special Plat...</p>
+      <span>1.3km | New Tow Mohali</span>
+      <a href="#!">Order Now</a>
+    </div>
+    <div class="rating">
+      <span>4.3</span>
+    </div>
+  </div>
+  <div class="product_contant">
+    <div class="product_image">
+      <img src="assets\newImg\ScreenImage2.png" alt="" />
+    </div>
+    <div class="product_text">
+      <h3>DILLI KA CLUB</h3>
+      <p>Casual Dining - Chinese Food special Plat...</p>
+      <span>1.3km | New Tow Mohali</span>
+      <a href="#!">Order Now</a>
+    </div>
+    <div class="rating">
+      <span>4.3</span>
+    </div>
+  </div>
+  <div class="product_contant">
+    <div class="product_image">
+      <img src="assets\newImg\ScreenImage2.png" alt="" />
+    </div>
+    <div class="product_text">
+      <h3>DILLI KA CLUB</h3>
+      <p>Casual Dining - Chinese Food special Plat...</p>
+      <span>1.3km | New Tow Mohali</span>
+      <a href="#!">Order Now</a>
+    </div>
+    <div class="rating">
+      <span>4.3</span>
+    </div>
+  </div>
+  <div class="product_contant">
+    <div class="product_image">
+      <img src="assets\newImg\ScreenImage2.png" alt="" />
+    </div>
+    <div class="product_text">
+      <h3>DILLI KA CLUB</h3>
+      <p>Casual Dining - Chinese Food special Plat...</p>
+      <span>1.3km | New Tow Mohali</span>
+      <a href="#!">Order Now</a>
+    </div>
+    <div class="rating">
+      <span>4.3</span>
+    </div>
+  </div>
+  <div class="product_contant">
+    <div class="product_image">
+      <img src="assets\newImg\ScreenImage2.png" alt="" />
+    </div>
+    <div class="product_text">
+      <h3>DILLI KA CLUB</h3>
+      <p>Casual Dining - Chinese Food special Plat...</p>
+      <span>1.3km | New Tow Mohali</span>
+      <a href="#!">Order Now</a>
+    </div>
+    <div class="rating">
+      <span>4.3</span>
+    </div>
+  </div>
+</div> -->
+
+
+<ion-content class="ion-padding">
+<div class="ion-page" id="main-content">
+  <ion-searchbar debounce="500" [(ngModel)]="search" (ionChange)="searchService()"></ion-searchbar>
+
+  <ion-content role="feed" class="bottam">
+
+    <ion-list class="list" *ngFor="let item of serviceData  | filter:search:filterKeys;let i=index ">
+
+      <ion-item (click)="onClick(item._id,item)"  *ngIf="!progressBar">
+        <div class="product_contant">
+          <div class="product_image">
+            <img *ngIf="item.name=='Dairy Products'" src="assets\img\Dairy-Products.jpeg" alt="" />
+            <img *ngIf="item.name=='Fruits'" src="assets\img\fruits.jpg" alt="" />
+
+            <img *ngIf="item.name=='Vegetables'" src="assets\img\vegi.jpg" alt="" />
+
+          </div>
+          <div class="product_text">
+            <h3>{{item.name}}</h3>
+            <p *ngIf="item.name=='Vegetables'">Keep calm and eat more veggies.</p>
+            <p *ngIf="item.name=='Fruits'">Fruit is the spirit of joy.</p>
+            <p *ngIf="item.name=='Dairy Products'">Discover the richness of real dairy.</p>
+
+
+            <span> Same day | Next day</span>
+            <a  (click)="onClick(item._id,item)">Order Now</a>
+          </div>
+        
+        </div>
+        <!-- <ion-thumbnail  slot="start">
+          <img alt="Silhouette of a person's head" src="assets\newImg\ScreenImage2.png" />
+        </ion-thumbnail >
+        <ion-label>
+          <h2>{{item.name}}</h2>
+        </ion-label> -->
+      </ion-item>
+
+
+
+      <ion-item *ngIf="progressBar">
+        <ion-thumbnail slot="start">
+          <ion-skeleton-text [animated]="true"></ion-skeleton-text>
+        </ion-thumbnail>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text [animated]="true" style="width: 80%;"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text [animated]="true" style="width: 60%;"></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text [animated]="true" style="width: 30%;"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</div>
+</ion-content>
+
+
+<app-footer></app-footer>
+<!-- <div class="fixed_footer">
+  <div class="footer_link">
+    <ul>
+      <li><a routerLink="/home2" routerLinkActive="active"><ion-icon name="home"></ion-icon><br>Home</a></li>
+      <li><a href="#!"><ion-icon name="fast-food"></ion-icon><br>Order</a></li>
+      <li><a href="#!"><ion-icon name="search"></ion-icon><br>Search</a></li>
+      <li><a href="#!"><ion-icon name="person"></ion-icon><br>User</a></li>
+    </ul>
+  </div>
+</div> -->

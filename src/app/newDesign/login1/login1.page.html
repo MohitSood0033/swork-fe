@@ -1,0 +1,105 @@
+<div class="main">
+  <div class="banner">
+    <img src="assets\newImg\ScreenImage4.png" alt="" />
+    <img class="home_icon" src="assets\newImg\HomepageIconWithBack.png" alt="" routerLink="/home2" />
+    <div class="boarderHover">
+
+    </div>
+  </div>
+  <div class="logo">
+    <img src="/assets/img/s-work7-logo-11.png" alt="" />
+  </div>
+
+  <div class="title_text">
+    <h1>Login Now</h1>
+    <p>Login Now and Explore the <br>awesome exprience</p>
+  </div>
+  <div class="form_group">
+
+    <!-- <div class="tab_btns">
+      <div class="left__btn">
+        <a href="javascript:void(0);" [ngClass]="{'selected': selected === 1}" (click)="changeSelected(1)">
+           <ion-icon name="git-network-sharp"></ion-icon> 
+          Customer
+        </a>
+      </div>
+      <div class="left__btn">
+        <a href="javascript:void(0);" [ngClass]="{'selected': selected === 2}" (click)="changeSelected(2)">
+           <ion-icon name="card-sharp"></ion-icon>
+           Restaurent
+        </a>
+      </div>
+    </div> -->
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+
+      <!-- <ion-item lines="full">
+        <ion-label position="floating">Phone</ion-label>
+        <ion-input   formControlName="phone" type="number" required></ion-input>
+      </ion-item>
+      <span *ngIf="isLoggedIn && loginForm.controls.phone.errors" class="text-danger">
+        <span class="error ion-padding" *ngIf="isLoggedIn && loginForm.controls.phone.errors.required">
+          Mobile number is required.
+        </span>
+        <span class="error ion-padding" *ngIf="isLoggedIn && loginForm.controls.phone.errors.pattern">
+          Only numerical values allowed.
+        </span>
+        <span class="error ion-padding" *ngIf="isLoggedIn &&loginForm.controls.phone.errors.maxLength">
+          Min&Max Length should be 10.
+        </span>
+      </span>  -->
+      <ion-item lines="full">
+        <ion-label position="floating">Phone</ion-label>
+        <ion-input  type="number" formControlName="phone"></ion-input>
+      </ion-item>
+      <span *ngIf="isLoggedIn && loginForm.controls['phone'].errors" class="text-danger">
+        <span class="error ion-padding" *ngIf="isLoggedIn && loginForm.controls['phone'].errors['required']">
+          *Mobile Number is required.
+        </span>
+        <span class="error ion-padding" *ngIf="isLoggedIn && loginForm.controls['phone'].errors['pattern']">
+          *Mobile Number should be 10 digit only
+        </span>
+      </span>
+
+
+      <!-- <ion-item lines="full">
+        <ion-label position="floating">Phone</ion-label>
+        <ion-input maxlength="10" formControlName="phone" type="text"></ion-input>
+      </ion-item>
+      <span *ngIf="isLoggedIn && loginForm.controls['phone'].errors" class="text-danger">
+        <span class="error ion-padding" *ngIf="isLoggedIn && loginForm.controls['phone'].errors['required']">
+          *Mobile Number is required.
+        </span>
+        <span class="error ion-padding" *ngIf="isLoggedIn && loginForm.controls['phone'].errors['pattern']">
+          *Mobile Number should be 10 digit only
+        </span>
+      </span> -->
+
+      <ion-item lines="full">
+        <ion-label position="floating">Password </ion-label>
+        <ion-input type="password" appAutofill [type]="showPassword ? 'text':'password'" formControlName="password" required></ion-input>
+      <ion-icon slot="end" [name]="passwordToggleIcon" (click)="toggle()"></ion-icon>
+
+        <!-- <img class="hide_show" src="assets\newImg\PasswordShow.svg" alt="" />
+        <img class="hide_show" src="assets\newImg\PasswordHide.svg" alt="" /> -->
+        <!-- <ion-icon slot="end" [name]="passwordToggleIcon" (click)="toggle()"></ion-icon> -->
+      </ion-item>
+      <span *ngIf="isLoggedIn && loginForm.controls.password.errors" class="text-danger">
+        <span class="error ion-padding" *ngIf="isLoggedIn && loginForm.controls.password.errors.required">
+          Password is required.
+        </span>
+      </span>
+      <div class="register_btn">
+        <ion-button class="register" fill="clear" type="submit">
+          LOGIN NOW
+        </ion-button>
+        <br>
+        <span>OR</span>
+        <br>
+        <span style="color:#ff7722 ;font-weight: bold;
+       font-size: 15px;" routerLink="/register1">REGISTER NOW</span>
+
+      </div>
+    </form>
+  </div>
+</div>

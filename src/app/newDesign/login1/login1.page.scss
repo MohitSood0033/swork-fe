@@ -1,0 +1,116 @@
+.main {
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: space-between; */
+  height: 80vh;
+  overflow-y: auto;
+}
+.banner {
+  position: relative;
+}
+.banner img {
+  width: 100%;
+  // height: 200px;
+  // object-fit: cover;
+}
+.banner .home_icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 40px;
+  height: 40px;
+}
+.boarderHover {
+  height: 15px;
+  background-color: white;
+  border-radius: 15px 14px 0px 0px;
+  position: absolute;
+  bottom: -2px;
+  width: 100%;
+}
+.logo {
+  text-align: center;
+  margin-top: 2rem;
+}
+.logo img {
+  width: 190px;
+}
+.title_text {
+  text-align: center;
+  padding: 0 45px;
+}
+.title_text h1 {
+  margin: 1rem 0 1rem;
+}
+
+.form_group {
+  padding: 0 45px;
+  // margin-bottom: 8rem;
+  // height: 220px;
+  // overflow-y: auto;
+  margin-bottom: 5rem;
+}
+.register_btn {
+  padding: 2rem 0;
+  position: fixed;
+  margin: 0px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9;
+  width: 100%;
+  background-color: #fff;
+  text-align: center;
+}
+.form_group .register_btn ion-button {
+  background-color: #ff7722;
+  color: #fff;
+  border-radius: 35px;
+  font-weight: bold;
+  font-size: 15px;
+  height: 60px;
+  width: 80%;
+}
+
+.tab_btns .left__btn a {
+  width: 100%;
+  display: block;
+  text-align: center;
+  padding: 8px 0;
+  color: #000000;
+}
+.tab_btns .left__btn a.selected {
+  color: #fff !important;
+  background: #ff7722;
+  border-radius: 0px;
+}
+
+.tab_btns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #f72;
+  border-radius: 0px;
+}
+.tab_btns .left__btn {
+  width: 100%;
+}
+.tab_btns .left__btn a {
+  width: 100%;
+  display: block;
+  text-align: center;
+  padding: 8px 0;
+  color: #000000;
+}
+ion-icon{
+  margin-top: 20px;
+
+  color: #f72;
+
+}
+
+.hide_show {
+  position: absolute;
+  right: 0;
+  bottom: 24px;
+}

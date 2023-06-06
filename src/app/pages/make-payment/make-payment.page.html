@@ -1,0 +1,283 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()"><ion-icon name="arrow-back"></ion-icon></ion-button>
+      <ion-col align-self-center>
+        <ion-img src="assets/img/s-work7-logo-11.png" class="log"></ion-img>
+      </ion-col>
+    </ion-buttons>
+
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div>
+    <ion-card>
+      <ion-card-header class="price_header">Price Details</ion-card-header>
+      <ion-grid>
+        <ion-row class="list_row">
+          <ion-col>Price</ion-col>
+          <ion-col>{{price}}</ion-col>
+        </ion-row>
+        <ion-row class="list_row">
+          <ion-col>Service Charge</ion-col>
+          <ion-col>{{serviceCharge}}</ion-col>
+        </ion-row>
+        <ion-row class="list_row">
+          <ion-col>Tax</ion-col>
+          <ion-col>{{tax}}</ion-col>
+        </ion-row>
+        <ion-row class="list_row">
+          <ion-col>Delivery Charge</ion-col>
+          <ion-col>{{deliveryCharge}}</ion-col>
+        </ion-row>
+        <ion-row class="list_row">
+          <ion-col>Total Amount</ion-col>
+          <ion-col>{{totalAmt}}</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+  </div>
+
+  <!-- <div class="main col-4-12">
+    <div class="main_1 col-12-12">
+      <div class="sub_main">
+        <div class="sub_main_1">
+          <span class="span">Price Details</span>
+          <div class="sub_span">
+            <div class="content">
+              <div class="content_1">
+                <div class="price">Price</div>
+              </div>
+              <span>{{price}}</span>
+            </div>
+            <div class="content">
+              <div class="content_1">
+                <div class="price">Service Charge</div>
+              </div>
+              <span>{{serviceCharge}}</span>
+            </div>
+            <div class="content">
+              <div class="content_1">
+                <div class="price">Tax</div>
+              </div>
+              <span>{{tax}}</span>
+            </div>
+            <div class="content">
+              <div class="content_1">
+                <div class="price">Delivery Charge</div>
+              </div>
+              <span>{{deliveryCharge}}</span>
+            </div>
+            <div class="final">
+              <div class="sub_final">
+                <div class="sub_final_1">
+                  <div class="total">Total Amount</div>
+                </div>
+                <span>
+                  <div class="main_span">
+                    <div class="main_span_1 span_1">
+                      <div class="main_span_2">
+                        <div class="main_span_3"></div>
+                      </div>
+                      <span>{{totalAmt}}</span>
+                    </div>
+                  </div>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <div>
+    <ion-card>
+      <ion-card-header class="price_header">Address Details</ion-card-header>
+      <!-- <ion-button class="btns" *ngFor="let btn of btnTypelist" (click)="onclick(btn)">{{btn.btnType}}</ion-button> -->
+      <ion-button class="add_addressBtn" (click)="onclick('Add New Address')">Add New Address</ion-button>
+      <!-- <ion-col *ngFor="let btn of btnTypelist">
+          <ion-button class="add" (click)="onclick(btn)">{{btn.btnType}}
+          </ion-button>
+        <ion-col></ion-col> -->
+
+      <form [formGroup]="createAddress" *ngIf="createAddressbtn" class="editaddressmodal">
+        <fieldset>
+          <div style="padding: 10px; margin-bottom: 15px">
+            <ion-item lines="full">
+              <ion-label position="floating">First Name*</ion-label>
+              <ion-input formControlName="firstname" type="text" placeholder="Enter firstname  "></ion-input>
+            </ion-item>
+            <span *ngIf="isSubmitted&& createAddress.controls['firstname'].errors" class="text-danger">
+              <span class="error ion-padding"
+                *ngIf="isSubmitted && createAddress.controls['firstname'].errors['required']">
+                *First Name is required.
+              </span>
+            </span>
+
+            <ion-item lines="full">
+              <ion-label position="floating">Last Name*</ion-label>
+              <ion-input formControlName="lastname" type="text" placeholder="Enter lastname "></ion-input>
+            </ion-item>
+            <span *ngIf="isSubmitted&& createAddress.controls['lastname'].errors" class="text-danger">
+              <span class="error ion-padding"
+                *ngIf="isSubmitted && createAddress.controls['lastname'].errors['required']">
+                *Last Name is required.
+              </span>
+            </span>
+
+            <!-- <ion-item lines="full">
+              <ion-label position="floating">Phone*</ion-label>
+
+              <ion-input formControlName="phone" type="text" placeholder="Enter phone "></ion-input>
+            </ion-item>
+            <span *ngIf="isSubmitted&& createAddress.controls['phone'].errors" class="text-danger">
+              <span class="error ion-padding" *ngIf="isSubmitted && createAddress.controls['phone'].errors['required']">
+                *Phone is required.
+              </span>
+              <span class="error ion-padding" *ngIf="isSubmitted && createAddress.controls['phone'].errors['pattern']">
+                *Only numerical values allowed.
+              </span>
+            </span> -->
+
+            <ion-item lines="full">
+              <ion-label position="floating">Street Address*</ion-label>
+              <ion-input formControlName="streetAddress" type="text" placeholder="Enter streetAddress "></ion-input>
+            </ion-item>
+            <span *ngIf="isSubmitted&& createAddress.controls['streetAddress'].errors" class="text-danger">
+              <span class="error ion-padding"
+                *ngIf="isSubmitted&& createAddress.controls['streetAddress'].errors['required']">
+                *Street Address is required.
+              </span>
+            </span>
+
+            <ion-item lines="full">
+              <ion-label position="floating">City*</ion-label>
+              <ion-input formControlName="city" type="text" placeholder="Enter city "></ion-input>
+            </ion-item>
+            <span *ngIf="isSubmitted&& createAddress.controls['city'].errors" class="text-danger">
+              <span class="error ion-padding" *ngIf="isSubmitted && createAddress.controls['city'].errors['required']">
+                *City is required.
+              </span>
+            </span>
+
+            <ion-item lines="full">
+              <ion-label position="floating">State*</ion-label>
+              <ion-input formControlName="state" type="text" placeholder="Enter state"></ion-input>
+            </ion-item>
+            <span *ngIf="isSubmitted&& createAddress.controls['state'].errors" class="text-danger">
+              <span class="error ion-padding" *ngIf="isSubmitted && createAddress.controls['state'].errors['required']">
+                *state is required.
+              </span>
+            </span>
+            <ion-item lines="full">
+              <ion-label position="floating">PinCode*</ion-label>
+              <ion-input formControlName="pin" type="number" placeholder="Enter zipCode "></ion-input>
+            </ion-item>
+            <span *ngIf="isSubmitted&& createAddress.controls['pin'].errors" class="text-danger">
+              <span class="error ion-padding" *ngIf="isSubmitted && createAddress.controls['pin'].errors['required']">
+                *PinCode is required.
+              </span>
+              <span class="error ion-padding" *ngIf="isSubmitted && createAddress.controls['pin'].errors['pattern']">
+                *Pin code is invalid
+              </span>
+            </span>
+            <!-- <span
+          *ngIf="isSubmitted&& createAddress.controls['pin'].errors"
+          class="text-danger"
+        >
+          <span
+            class="error ion-padding"
+            *ngIf="isSubmitted && createAddress.controls['pin'].errors['required']"
+          > -->
+            <!-- <ion-input formControlName="zipCode" type="text" placeholder="Enter zipCode "></ion-input>
+        </ion-item>
+        <span *ngIf="isSubmitted3&& createAddress.controls['zipCode'].errors" class="text-danger">
+          <span class="error ion-padding"
+            *ngIf="isSubmitted3 && createAddress.controls['zipCode'].errors['required']">
+
+            *Zipcode is required.
+          </span>
+        </span> -->
+            <!-- </span>
+        </span> -->
+
+            <!-- <ion-grid>
+              <ion-row>
+                <ion-col> </ion-col>
+                <ion-col size="auto">
+                  <ion-button class="btn1" type="submit">Save</ion-button>
+                </ion-col>
+              </ion-row>
+            </ion-grid> -->
+            <ion-button class="add_addressBtn" type="submit" (click)="save()">Save</ion-button>
+          </div>
+        </fieldset>
+      </form>
+
+
+      <div *ngIf="existingAddressbtn">
+
+        <ion-list>
+          <ion-radio-group (ionChange)="radioGroupChange($event)" [value]="addressId">
+            <ion-item (ionFocus)="radioFocus()" (ionSelect)="radioSelect($event)" (ionBlur)="radioBlur()"
+              *ngFor="let address of deliveryAddress ">
+              <ion-label>Name : {{address.firstname}} <br />
+                <b>Address : {{address.streetAddress}} <br />
+                  <b>Pin : {{address.pin}} </b> <br /> </b> </ion-label>
+              <ion-radio slot="start" [value]="address._id" (click)="address_id(address)"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </ion-list>
+        <!-- <ion-card *ngFor="let address of deliveryAddress ">
+          <ion-card-content>
+            <ion-grid>
+              <ion-row>
+                <ion-col style="color: rgb(46, 44, 44)">
+                  
+                  <b>Name : {{address.firstname}} </b><br />
+                  <b>Mobile : {{address.phone}} </b> <br />
+                  <b>Address : {{address.streetAddress}} <br /> </b>
+                </ion-col>
+              </ion-row> -->
+        <!-- </ion-grid> -->
+        <!-- <ion-button class="addressbtn" (click)="selectAddress(address)">
+              continue with this address</ion-button
+            > -->
+        <!-- </ion-card-content>
+        </ion-card> -->
+
+        <!-- </div> -->
+
+        <!-- </ion-card> -->
+
+      </div>
+    </ion-card>
+    <br />
+    <br />
+  </div>
+  <div class="place_btnMain">
+    <ion-button class="place_btn" (click)="placeOrder()" [disabled]="selectedRadioGroup==undefined">Place
+      Order</ion-button>
+
+  </div>
+</ion-content>
+
+
+<!-- <button style="color:white;
+    height: 36px;
+    width: 155px;
+    font-weight: bold;
+    background-color:  #ff7722; outline: none;" (click)="placeOrder()" [disabled]="selectedRadioGroup==undefined">Place Order</button> -->
+<!-- <ion-button color="danger" mode="md" (click)="paymentSheet()"
+      >Pay Now</ion-button> -->
+<!-- <ion-button color="danger" mode="md" (click)="buy('basic')"
+      >Pay Now</ion-button> -->
+
+<!-- <ion-button style="color: #ff7722;" (click)="placeOrder()"
+      >Place Order</ion-button> -->
+
+
+<!-- <app-footer></app-footer> -->

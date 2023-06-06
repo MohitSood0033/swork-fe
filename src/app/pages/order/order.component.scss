@@ -1,0 +1,35 @@
+.log {
+  display: grid;
+  width: 70%;
+  margin-left: 10px;
+}
+.close {
+  // border-right-style: solid;
+  // border-color: black;
+  width: 50px;
+  height: 40px;
+}
+.check {
+  width: 50px;
+  height: 40px;
+}
+.call {
+  width: 50px;
+  height: 38px;
+}
+.label_item {
+  white-space: break-spaces;
+}
+.status_row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0 0 0 -4px;
+}
+.status_row ion-badge {
+  margin-left: 5px;
+}
+
+.view_btn{
+  text-transform: capitalize;
+}

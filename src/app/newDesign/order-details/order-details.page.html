@@ -1,0 +1,144 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+      <!-- <ion-button (click)="goBack()"><ion-icon name="arrow-back"></ion-icon></ion-button> -->
+      <ion-col align-self-center>
+        <ion-img src="assets/img/s-work7-logo-11.png" class="log"></ion-img>
+      </ion-col>
+    </ion-buttons>
+
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="ion-padding">
+    <ion-list>
+      <ion-item *ngFor="let p of cartItem;let i= index;" class="ion-text-wrap">
+        <ion-grid>
+          <ion-card class="cart_card">
+            <ion-badge color="success">Price:</ion-badge>&nbsp;<ion-badge color="danger">{{ p.basePrice |
+              currency:'INR'}}</ion-badge>
+            <ion-row class="ion-align-items-center">
+              <ion-col size="4" class="icons_align product_img"><b class="w-100">Product</b></ion-col>
+              <ion-col size="4" class="icons_align"><b>Qty</b></ion-col>
+              <ion-col size="4" class="icons_align"><b>Price</b></ion-col>
+
+            </ion-row>
+            <ion-row class="ion-align-items-center">
+              <ion-col size="4" class="icons_align product_img">
+                <ion-img src="{{url}}{{p.imagePath}}"></ion-img>
+              </ion-col>
+
+
+              <ion-col size="4" class="icons_align">
+                {{ p.amount }}
+              </ion-col>
+
+              <ion-col size="4" class="icons_align">
+                {{ p.price | currency:'INR' }}
+              </ion-col>
+
+
+
+            </ion-row>
+            <ion-row>
+              <ion-col size="6">
+                <b>{{ p.name }}</b>
+              </ion-col>
+              <ion-col size="6" class="ion-text-end">
+
+              </ion-col>
+            </ion-row>
+          </ion-card>
+        </ion-grid>
+      </ion-item>
+    </ion-list>
+
+    <ion-item>
+      <ion-grid>
+       <ion-row>
+       <ion-col style="margin-bottom: -7px;">
+        <b>Delivery Address:</b>
+       </ion-col>
+       <!-- <ion-col  size="6" style="text-align: right;">{{firstname}} ,{{city}}<br>{{streetAddress}}<br>{{state}},{{pin}}</ion-col> -->
+       </ion-row>
+       <ion-row>
+        <ion-col>{{firstname}}, {{city}}, {{streetAddress}}<br>{{state}},{{pin}}</ion-col>
+       </ion-row>
+     <!-- <ion-row>
+      <ion-col>Name</ion-col>
+      <ion-col>1</ion-col>
+     </ion-row>
+
+     <ion-row>
+      <ion-col>state </ion-col>
+      <ion-col>1</ion-col>
+     </ion-row>
+     <ion-row>
+      <ion-col>city</ion-col>
+      <ion-col>1</ion-col>
+     </ion-row>
+     <ion-row>
+      <ion-col>streetAddress</ion-col>
+      <ion-col>1</ion-col>
+     </ion-row> -->
+      </ion-grid>
+    </ion-item>
+
+    <ion-item>
+      <ion-grid>
+
+        <ion-row>
+          <ion-col size="4">
+            Order total :
+          </ion-col>
+          <ion-col size="8" class="ion-text-end">
+            {{ totalOrderPrice | currency:'INR' }}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="4">
+            Delivery Charge:
+          </ion-col>
+          <ion-col size="8" class="ion-text-end">
+            {{ deliveryCharges | currency:'INR' }}
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="4">
+            service Charge:
+          </ion-col>
+          <ion-col size="8" class="ion-text-end">
+            {{ serviceCharge | currency:'INR' }}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="4">
+            tax :
+          </ion-col>
+          <ion-col size="8" class="ion-text-end">
+            {{ tax | currency:'INR' }}
+          </ion-col>
+        </ion-row>
+
+
+      </ion-grid>
+    </ion-item>
+
+    <ion-item>
+      <ion-grid class="total">
+        <ion-row>
+          <ion-col size="4">
+            Total:
+          </ion-col>
+          <ion-col size="8" class="ion-text-end">
+            {{ totalAmount | currency:'INR' }}
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </div>
+
+</ion-content>

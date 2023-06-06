@@ -1,0 +1,26 @@
+ion-segment-button {
+    --indicator-box-shadow: transparent !important;
+    --background: white;
+    // --color: color:#ff7722;
+    // --background-checked: linear-gradient(to right, #d81397, #0d5cc2) !important;
+    --color-checked:#ff7722;
+    // padding: 2px;
+  
+    // --border-width: 80%;
+    // --border-color: 1px solid black;
+  }
+
+  .label {
+    // font-weight: bold;
+    text-transform: capitalize;
+    margin: 5px;
+  }
+
+  ion-icon.segment-icon{
+    // margin-bottom: -12px;
+    // color:#ff7722;
+  }
+
+  ion-segment-button::part(indicator) {
+    width: 0px;
+  }
